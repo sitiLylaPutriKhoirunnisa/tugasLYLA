@@ -1,9 +1,9 @@
 <?php
     
-$id = $_GET['id'];
+$id = $_POST['id'];
 
 $db = new PDO("mysql:host=localhost;dbname=pbo12","root","");
-$query = $db->query("select * from siswa WHERE id= $id");
+$query = $db->query("select * from siswa WHERE `id` = '$id' ");
 $data = $query->fetch();
 ?>
 <!DOCTYPE html>
@@ -28,8 +28,8 @@ $data = $query->fetch();
                 <div class="mb-3">
                     <label for="kelas" class="form-label">Kelas</label>
                     <select name="kelas" id="kelas" class="form-select">
-                        <option value="1" <?= $data['kelas'] == '1' ? 'selected' : ''?>></option>
-                        <option value="2" <?= $data['kelas'] == '2' ? 'selected' : ''?>></option>
+                        <option value="11" <?= $data['kelas'] == '11' ? 'selected' : ''?>></option>
+                        <option value="12" <?= $data['kelas'] == '12' ? 'selected' : ''?>></option>
 
                     </select>
                 </div>

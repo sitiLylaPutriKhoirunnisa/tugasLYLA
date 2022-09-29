@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['username'])){
+        header("Location:form_login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,9 +36,21 @@
                     <a href="proses_hapus.php?id=<?= $data['id']; ?>"
                     class="btn btn-danger btn-sm"
                     onclick="return confirm('Anda yakin akan menghapus data ini ?')">Hapus</a>
+                  
                 </li>
+               
+
+               
                 <?php endwhile ?>
         </ul>
+        <b>
+                    <a href="form_login.php"
+                    class="btn btn-warning">Login</a>
+                </b>
+                <b>
+                    <a href="hapus_login.php"
+                    class="btn btn-info">Logout</a>
+                </b>
     </div>
     
 </body>
